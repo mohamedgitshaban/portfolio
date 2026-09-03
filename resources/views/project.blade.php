@@ -45,7 +45,13 @@
                                 <a href="{{ $project['link'] }}" class="btn btn-primary" target="_blank" rel="noopener" data-magnetic>
                                     <span>Visit Live Project ↗</span>
                                 </a>
-                            @else
+                            @endif
+                            @if (!empty($project['source']))
+                                <a href="{{ $project['source'] }}" class="btn" target="_blank" rel="noopener" data-magnetic>
+                                    <span>View Source ↗</span>
+                                </a>
+                            @endif
+                            @if (empty($project['link']) && empty($project['source']))
                                 <span class="badge-private">Private client project · no public link</span>
                             @endif
                         </div>
@@ -104,7 +110,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        <p class="preview-note">Placeholder preview — real product screens are client-confidential; add public-safe screenshots via <code>config/portfolio.php</code> once available.</p>
+                        <p class="preview-note">Placeholder preview — add real product screenshots via <code>config/portfolio.php</code> once available.</p>
                     @endif
 
                     {{-- ===================== CASE STUDY (Wathiqaty only) ===================== --}}
