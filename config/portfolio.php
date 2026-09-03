@@ -10,7 +10,6 @@ return [
     'roles' => [
         'Senior Software Engineer',
         'Backend / Full-Stack Engineer',
-        'Application Security',
     ],
     'location' => 'Giza, Egypt',
     'email' => 'mohamedgmshaban@gmail.com',
@@ -43,7 +42,7 @@ return [
     'skills' => [
         [
             'group' => 'Backend',
-            'items' => ['PHP', 'Laravel', 'Java', 'Spring Boot', 'REST APIs', 'Queues', 'Webhooks', 'Authentication', 'Authorization'],
+            'items' => ['PHP', 'Laravel', 'Java','Node.js', 'Spring Boot', 'REST APIs', 'Queues', 'Webhooks', 'Authentication', 'Authorization'],
         ],
         [
             'group' => 'Frontend',
@@ -187,7 +186,7 @@ return [
             // Add real screenshot paths here (e.g. 'projects/wathiqaty/dashboard.png',
             // saved under public/) to replace the placeholder preview on the project page.
             'screenshots' => [],
-            'stack' => ['Laravel', 'PHP', 'MySQL', 'REST APIs', 'RBAC', 'JWT', 'Rate Limiting'],
+            'stack' => ['Laravel', 'multitenant' ,'PHP', 'MySQL', 'REST APIs', 'RBAC', 'JWT', 'Rate Limiting'],
             'points' => [
                 'Owned end-to-end remediation of an external gray-box penetration test across Tenant and Super Admin portals.',
                 'Fixed Critical/High findings in authorization, object storage, business logic, session security, and rate limiting.',
@@ -202,7 +201,7 @@ return [
             'description' => 'Maqsafy is an electronic payment platform built for the Saudi market, handling wallets, transfers, deposits, withdrawals, commissions, refunds, reconciliation, school-fee collection, and order management. I integrated Moyasar, HyperPay, Mastercard, Apple Pay, and MADA for secure payment handling, and layered in scoped RBAC, background jobs, Laravel Excel exports, Firebase notifications, and AWS S3 storage — with ongoing database optimization to keep financial workflows fast and reliable at scale.',
             'link' => 'https://maqsafy.com/',
             'screenshots' => [],
-            'stack' => ['Laravel', 'MySQL', 'Redis', 'Laravel Nova', 'Payment Gateways'],
+            'stack' => ['MySQL', 'Redis', 'Laravel Nova', 'Payment Gateways' , 'Laravel', 'REST APIs', 'RBAC', 'Background Jobs', 'Firebase', 'AWS S3'],
             'points' => [
                 'Built wallet and financial workflows: transfers, deposits, withdrawals, commissions, refunds, reconciliation.',
                 'Integrated Moyasar, HyperPay, Mastercard, Apple Pay, and MADA with secure payment handling.',
@@ -217,7 +216,7 @@ return [
             'description' => 'Goway is a ride-hailing platform covering the full trip lifecycle — matching, live tracking, pricing, cancellation, wallets, and payments — built on Laravel 10. I implemented real-time driver discovery using geohashing with Redis and Ably/Reverb, and a dynamic pricing engine that factors in distance, traffic, tolls, coupons, and surge conditions.',
             'link' => 'https://www.gowayapps.com/',
             'screenshots' => [],
-            'stack' => ['Laravel 10', 'Redis', 'Ably/Reverb', 'Google Routes', 'Payments'],
+            'stack' => ['Laravel 10', 'Redis', 'Ably/Reverb', 'Google Routes', 'Payments' , ],
             'points' => [
                 'Developed REST APIs and full trip lifecycle: matching, live tracking, pricing, cancellation, wallets, payments.',
                 'Real-time driver discovery via geohashing, Redis, and Ably/Reverb; dynamic pricing with surge factors.',
@@ -231,7 +230,7 @@ return [
             'description' => 'A secure REST API integration with ROX Custody, authenticated via API keys through reusable HTTP clients. Wallet state is kept in sync through inbound webhooks, with event logging, caching, optimized queries, and background jobs handling the asynchronous side of every transaction.',
             'link' => null,
             'screenshots' => [],
-            'stack' => ['Laravel', 'REST APIs', 'Webhooks', 'Background Jobs'],
+            'stack' => ['Laravel', 'REST APIs', 'Webhooks', 'Background Jobs', 'Caching', 'Event Logging'],
             'points' => [
                 'Built secure REST API integration using API-key authentication and reusable HTTP clients.',
                 'Implemented wallet synchronization through webhooks, event logging, caching, and background jobs.',
@@ -245,7 +244,7 @@ return [
             'description' => 'An ERP and e-commerce system for STARON Egypt covering payments, logistics, and internal dashboards, with real-time synchronization to a companion mobile app. Built on Laravel, React, and MySQL with a REST API at its core.',
             'link' => null,
             'screenshots' => [],
-            'stack' => ['Laravel', 'React', 'MySQL', 'REST APIs'],
+            'stack' => ['Laravel', 'React', 'MySQL', 'REST APIs' , 'Laravel Sanctum'],
             'points' => [
                 'Developed ERP and e-commerce functionality covering payments, logistics, dashboards, mobile sync.',
             ],
@@ -258,7 +257,7 @@ return [
             'description' => "The public corporate website for STARON Egypt. I built the full frontend end to end — responsive layout, component structure, and styling — independently of the internal ERP system above, which is a separate, non-public admin platform.",
             'link' => 'https://staronegypt.com.eg/',
             'screenshots' => [],
-            'stack' => ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+            'stack' => ['react.js','HTML5', 'CSS3', 'JavaScript', 'Responsive Design' , 'Componentized Frontend' , ],
             'points' => [
                 'Designed and built the complete public-facing frontend for STARON Egypt\'s corporate website.',
                 'Implemented responsive, cross-device layouts and componentized, maintainable front-end structure.',
@@ -272,7 +271,7 @@ return [
             'description' => 'An HR and payroll system for Agrigroup covering employee management, attendance, deductions and additions, vacation and warning logs, and automated monthly payroll generation. QR-based employee lookup speeds up daily check-ins, backed by secure APIs, structured logging, and robust error handling.',
             'link' => null,
             'screenshots' => [],
-            'stack' => ['Laravel', 'MySQL', 'REST APIs'],
+            'stack' => ['Laravel', 'react.js','MySQL', 'REST APIs'],
             'points' => [
                 'Built employee management, attendance, deductions/additions, vacation/warning logs, monthly payroll.',
                 'Implemented QR-based employee lookup, secure APIs, logging, and error handling.',
@@ -292,6 +291,7 @@ return [
     'certifications' => [
         ['name' => 'IBM Java Programming Certificate', 'issuer' => 'IBM'],
         ['name' => 'Spring Boot', 'issuer' => 'Mahara-Tech'],
+        ['name' => 'Node.js', 'issuer' => 'Udemy'],
         ['name' => 'Mathematics for Machine Learning: Linear Algebra', 'issuer' => 'Imperial College London'],
     ],
 
