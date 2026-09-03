@@ -652,8 +652,8 @@ body.menu-open {
 .about-text {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(1.4rem, 2.6vw, 2rem);
-    line-height: 1.5;
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    line-height: 1.65;
     letter-spacing: -0.01em;
 }
 
@@ -1000,6 +1000,7 @@ body.menu-open {
 
 .project-card {
     position: relative;
+    display: block;
     border: 1px solid var(--line);
     border-radius: 20px;
     padding: 1.9rem;
@@ -1029,33 +1030,301 @@ body.menu-open {
 .project-card .subtitle {
     font-size: 0.85rem;
     color: var(--ink-dim);
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.9rem;
 }
 
-.project-card ul {
-    display: grid;
-    gap: 0.5rem;
-    margin-bottom: 1.3rem;
-}
-
-.project-card ul li {
-    font-size: 0.87rem;
+.project-summary {
+    font-size: 0.9rem;
     color: var(--ink-dim);
     line-height: 1.55;
-    padding-left: 1.1rem;
-    position: relative;
+    margin: 0 0 1.3rem;
 }
 
-.project-card ul li::before {
-    content: '›';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
+.project-card .tag-row {
+    margin-bottom: 1.4rem;
 }
 
 .project-card .tag-row .tag {
     font-size: 0.72rem;
     padding: 0.3rem 0.6rem;
+}
+
+.project-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.project-card-cta .arrow {
+    transition: transform 0.3s var(--ease-out);
+}
+
+.project-card:hover .project-card-cta .arrow {
+    transform: translateX(4px);
+}
+
+/* ---- Project detail page ------------------------------------------------*/
+.project-detail {
+    padding-block: clamp(6rem, 12vw, 8rem) 5rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--ink-dim);
+    margin-bottom: 2.5rem;
+    transition: color 0.25s;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0.5em 0 0;
+}
+
+.project-subtitle {
+    margin-top: 0.9rem;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--ink-dim);
+    max-width: 50ch;
+}
+
+.project-hero-foot {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+
+.badge-private {
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.6rem 1.1rem;
+}
+
+.project-cover {
+    position: relative;
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    height: clamp(220px, 32vw, 380px);
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background:
+        radial-gradient(circle at 20% 20%, hsla(var(--cover-hue, 80deg), 90%, 65%, 0.35), transparent 55%),
+        radial-gradient(circle at 80% 80%, hsla(calc(var(--cover-hue, 80deg) + 60), 80%, 55%, 0.25), transparent 55%),
+        var(--panel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-cover-chrome {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.4rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.project-cover-chrome span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.project-cover-mark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(5rem, 14vw, 10rem);
+    color: rgba(255, 255, 255, 0.08);
+    line-height: 1;
+}
+
+.project-body {
+    margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.project-body-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.body-heading {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin: 0 0 1rem;
+    color: var(--accent);
+}
+
+.body-text {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink-dim);
+    max-width: 62ch;
+}
+
+/* ---- Preview panels (placeholder UI skeletons) ---------------------------*/
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.6rem;
+}
+
+.preview-shot {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+.preview-shot img {
+    width: 100%;
+    display: block;
+}
+
+.preview-panel {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--panel);
+    padding: 0.9rem;
+}
+
+.preview-chrome {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.8rem;
+}
+
+.preview-chrome span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--line);
+}
+
+.preview-skeleton {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.9rem;
+    background: var(--bg-soft);
+}
+
+.sk-row {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--line);
+    margin-bottom: 0.6rem;
+    width: 40%;
+}
+
+.sk-row-wide {
+    width: 65%;
+}
+
+.sk-row-short {
+    width: 25%;
+}
+
+.sk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.sk-block {
+    height: 34px;
+    border-radius: 6px;
+    background: var(--line);
+}
+
+.preview-label {
+    margin-top: 0.8rem;
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    text-align: center;
+}
+
+.preview-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    line-height: 1.6;
+}
+
+.preview-note code {
+    color: var(--ink-dim);
+}
+
+.case-study {
+    margin-top: clamp(3.5rem, 8vw, 5.5rem);
+    padding-top: clamp(3rem, 6vw, 4rem);
+    border-top: 1px solid var(--line);
+}
+
+.project-pagination {
+    margin-top: clamp(4rem, 9vw, 6rem);
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.pagination-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.pagination-link.next {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.pagination-link:hover {
+    transform: translateY(-2px);
+}
+
+.pagination-label {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pagination-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--accent);
+}
+
+@media (max-width: 780px) {
+    .project-body-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card .glow {

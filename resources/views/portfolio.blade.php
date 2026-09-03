@@ -26,39 +26,7 @@
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
 
-    <header class="nav">
-        <a href="#top" class="nav-mark" aria-label="{{ $cv['name'] }} — home">
-            <span class="dot"></span> {{ $cv['initials'] }}
-        </a>
-
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <a href="{{ asset($cv['resume']) }}" class="nav-cta" target="_blank" rel="noopener" data-magnetic>
-            Résumé ↗
-        </a>
-
-        <button class="nav-burger" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
-    </header>
-
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#security">Security</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+    @include('partials.nav', ['cv' => $cv, 'home' => true])
 
     <main id="top">
 
@@ -203,26 +171,22 @@
                     <div>
                         <div class="eyebrow" data-reveal>04 — Security Spotlight</div>
                         <h2 class="section-title" data-reveal>{{ $cv['security']['title'] }}</h2>
-                        <p class="security-desc" data-reveal style="margin-top:1.2rem;">{{ $cv['security']['description'] }}</p>
+                        <p class="security-desc" data-reveal style="margin-top:1.2rem;">
+                            An independent security vendor ran the gray-box penetration test — every finding below is one I triaged and closed as the remediation engineer, not one I introduced.
+                        </p>
+                        <a href="{{ route('project.show', 'wathiqaty') }}" class="btn" data-reveal style="margin-top:1.6rem;">
+                            <span>Read the Full Case Study ↗</span>
+                        </a>
                     </div>
 
                     <div class="security-counters" data-reveal>
                         @foreach ($cv['security']['counters'] as $counter)
                             <div class="security-counter">
                                 <div class="num" data-counter="{{ $counter['value'] }}">0</div>
-                                <div class="num-label">{{ $counter['label'] }}</div>
+                                <div class="num-label">{{ $counter['label'] }} Fixed</div>
                             </div>
                         @endforeach
                     </div>
-                </div>
-
-                <div class="finding-grid" data-reveal-stagger>
-                    @foreach ($cv['security']['findings'] as $finding)
-                        <div class="finding-card" data-reveal-item>
-                            <h4>{{ $finding['title'] }}</h4>
-                            <p>{{ $finding['detail'] }}</p>
-                        </div>
-                    @endforeach
                 </div>
             </div>
         </section>
@@ -240,24 +204,21 @@
 
                 <div class="project-grid">
                     @foreach ($cv['projects'] as $i => $project)
-                        <article class="project-card" data-reveal>
+                        <a href="{{ route('project.show', $project['slug']) }}" class="project-card" data-reveal>
                             <span class="glow" aria-hidden="true"></span>
                             <div class="index">{{ sprintf('%02d', $i + 1) }}</div>
                             <h3>{{ $project['name'] }}</h3>
                             <div class="subtitle">{{ $project['subtitle'] }}</div>
-
-                            <ul>
-                                @foreach ($project['points'] as $point)
-                                    <li>{{ $point }}</li>
-                                @endforeach
-                            </ul>
+                            <p class="project-summary">{{ $project['summary'] }}</p>
 
                             <div class="tag-row">
-                                @foreach ($project['stack'] as $tech)
+                                @foreach (array_slice($project['stack'], 0, 3) as $tech)
                                     <span class="tag">{{ $tech }}</span>
                                 @endforeach
                             </div>
-                        </article>
+
+                            <span class="project-card-cta">View Case Study <span class="arrow">→</span></span>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -321,10 +282,7 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <span>© <span data-year></span> {{ $cv['name'] }}. Built with Laravel, GSAP &amp; Lenis.</span>
-        <a href="#top" class="back-to-top">Back to top ↑</a>
-    </footer>
+    @include('partials.footer', ['cv' => $cv, 'home' => true])
 
 </body>
 </html>
