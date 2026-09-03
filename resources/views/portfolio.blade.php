@@ -199,7 +199,7 @@
                         <div class="eyebrow" data-reveal>05 — Selected Work</div>
                         <h2 class="section-title" data-reveal>Projects that shipped.</h2>
                     </div>
-                    <p class="section-note" data-reveal>Seven systems across insurance, payments, logistics, HR, and the web — built and hardened end to end.</p>
+                    <p class="section-note" data-reveal>Nine systems across insurance, payments, logistics, HR, e-commerce, and marketplaces — built and hardened end to end.</p>
                 </div>
 
                 <div class="project-grid">
