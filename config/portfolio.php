@@ -36,7 +36,7 @@ return [
     'stats' => [
         ['value' => 4, 'suffix' => '+', 'label' => 'Years of Experience'],
         ['value' => 7, 'suffix' => '', 'label' => 'Pentest Findings Fixed'],
-        ['value' => 6, 'suffix' => '', 'label' => 'Flagship Projects Shipped'],
+        ['value' => 7, 'suffix' => '', 'label' => 'Flagship Projects Shipped'],
         ['value' => 3, 'suffix' => '', 'label' => 'Certifications Earned'],
     ],
 
@@ -183,7 +183,7 @@ return [
             'subtitle' => 'Insurance Platform — Application Security Remediation',
             'summary' => 'Owned remediation of a full gray-box pentest across an insurance platform\'s Tenant and Super Admin portals.',
             'description' => "Wathiqaty is a multi-tenant insurance platform spanning a Tenant Dashboard and a Super Admin Portal, covering insurance providers, tenants, admins, customers, policies, claims, payments, eKYC, documents, and e-signatures. When an external security vendor ran a gray-box penetration test across both portals, I was the primary engineer responsible for triaging and remediating every finding — from broken access control and privilege escalation to business-logic flaws, exposed object storage, and session-management gaps. I coordinated verification with the vendor and tracked remediation status finding-by-finding until sign-off.",
-            'link' => null,
+            'link' => 'https://sandbox.wathiqaty.com/ar/auth/login/individual',
             // Add real screenshot paths here (e.g. 'projects/wathiqaty/dashboard.png',
             // saved under public/) to replace the placeholder preview on the project page.
             'screenshots' => [],
@@ -200,7 +200,7 @@ return [
             'subtitle' => 'Electronic Payment Platform · Saudi Arabia',
             'summary' => 'Wallet and payment-gateway platform integrating Moyasar, HyperPay, Mastercard, Apple Pay, and MADA.',
             'description' => 'Maqsafy is an electronic payment platform built for the Saudi market, handling wallets, transfers, deposits, withdrawals, commissions, refunds, reconciliation, school-fee collection, and order management. I integrated Moyasar, HyperPay, Mastercard, Apple Pay, and MADA for secure payment handling, and layered in scoped RBAC, background jobs, Laravel Excel exports, Firebase notifications, and AWS S3 storage — with ongoing database optimization to keep financial workflows fast and reliable at scale.',
-            'link' => null,
+            'link' => 'https://maqsafy.com/',
             'screenshots' => [],
             'stack' => ['Laravel', 'MySQL', 'Redis', 'Laravel Nova', 'Payment Gateways'],
             'points' => [
@@ -215,7 +215,7 @@ return [
             'subtitle' => 'Ride-Hailing Platform',
             'summary' => 'Ride-hailing platform with real-time driver discovery and dynamic, surge-aware pricing.',
             'description' => 'Goway is a ride-hailing platform covering the full trip lifecycle — matching, live tracking, pricing, cancellation, wallets, and payments — built on Laravel 10. I implemented real-time driver discovery using geohashing with Redis and Ably/Reverb, and a dynamic pricing engine that factors in distance, traffic, tolls, coupons, and surge conditions.',
-            'link' => null,
+            'link' => 'https://www.gowayapps.com/',
             'screenshots' => [],
             'stack' => ['Laravel 10', 'Redis', 'Ably/Reverb', 'Google Routes', 'Payments'],
             'points' => [
@@ -248,6 +248,20 @@ return [
             'stack' => ['Laravel', 'React', 'MySQL', 'REST APIs'],
             'points' => [
                 'Developed ERP and e-commerce functionality covering payments, logistics, dashboards, mobile sync.',
+            ],
+        ],
+        [
+            'slug' => 'staron-egypt-web',
+            'name' => 'STARON Egypt',
+            'subtitle' => 'Corporate Website — Full Frontend Build',
+            'summary' => "STARON Egypt's public corporate website — designed and built the complete frontend.",
+            'description' => "The public corporate website for STARON Egypt. I built the full frontend end to end — responsive layout, component structure, and styling — independently of the internal ERP system above, which is a separate, non-public admin platform.",
+            'link' => 'https://staronegypt.com.eg/',
+            'screenshots' => [],
+            'stack' => ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+            'points' => [
+                'Designed and built the complete public-facing frontend for STARON Egypt\'s corporate website.',
+                'Implemented responsive, cross-device layouts and componentized, maintainable front-end structure.',
             ],
         ],
         [
