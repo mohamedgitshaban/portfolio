@@ -35,7 +35,7 @@ return [
 
     'stats' => [
         ['value' => 4, 'suffix' => '+', 'label' => 'Years of Experience'],
-        ['value' => 7, 'suffix' => '', 'label' => 'Security Findings Remediated'],
+        ['value' => 7, 'suffix' => '', 'label' => 'Pentest Findings Fixed'],
         ['value' => 6, 'suffix' => '', 'label' => 'Flagship Projects Shipped'],
         ['value' => 3, 'suffix' => '', 'label' => 'Certifications Earned'],
     ],
@@ -74,7 +74,8 @@ return [
     // Flat, de-duplicated list used for the marquee ticker.
     'stack_ticker' => [
         'PHP', 'Laravel', 'Java', 'Spring Boot', 'React.js', 'Next.js', 'MySQL', 'Redis',
-        'AWS S3', 'Docker', 'REST APIs', 'OWASP Top 10', 'RBAC', 'JWT', 'System Design', 'Microservices',
+        'AWS S3', 'Docker', 'REST APIs', 'OWASP Top 10', 'RBAC', 'JWT',
+        'System Design', 'Distributed Systems', 'Microservices',
     ],
 
     'experience' => [
@@ -173,19 +174,34 @@ return [
         ],
     ],
 
+    // 'link' is left null for client/enterprise projects with no public URL —
+    // the "Visit Live Project" button only renders when one is set.
     'projects' => [
         [
+            'slug' => 'wathiqaty',
             'name' => 'Wathiqaty',
             'subtitle' => 'Insurance Platform — Application Security Remediation',
+            'summary' => 'Owned remediation of a full gray-box pentest across an insurance platform\'s Tenant and Super Admin portals.',
+            'description' => "Wathiqaty is a multi-tenant insurance platform spanning a Tenant Dashboard and a Super Admin Portal, covering insurance providers, tenants, admins, customers, policies, claims, payments, eKYC, documents, and e-signatures. When an external security vendor ran a gray-box penetration test across both portals, I was the primary engineer responsible for triaging and remediating every finding — from broken access control and privilege escalation to business-logic flaws, exposed object storage, and session-management gaps. I coordinated verification with the vendor and tracked remediation status finding-by-finding until sign-off.",
+            'link' => null,
+            // Add real screenshot paths here (e.g. 'projects/wathiqaty/dashboard.png',
+            // saved under public/) to replace the placeholder preview on the project page.
+            'screenshots' => [],
             'stack' => ['Laravel', 'PHP', 'MySQL', 'REST APIs', 'RBAC', 'JWT', 'Rate Limiting'],
             'points' => [
                 'Owned end-to-end remediation of an external gray-box penetration test across Tenant and Super Admin portals.',
                 'Fixed Critical/High findings in authorization, object storage, business logic, session security, and rate limiting.',
+                'Coordinated verification with the security vendor and tracked remediation status per finding through to sign-off.',
             ],
         ],
         [
+            'slug' => 'maqsafy',
             'name' => 'Maqsafy',
             'subtitle' => 'Electronic Payment Platform · Saudi Arabia',
+            'summary' => 'Wallet and payment-gateway platform integrating Moyasar, HyperPay, Mastercard, Apple Pay, and MADA.',
+            'description' => 'Maqsafy is an electronic payment platform built for the Saudi market, handling wallets, transfers, deposits, withdrawals, commissions, refunds, reconciliation, school-fee collection, and order management. I integrated Moyasar, HyperPay, Mastercard, Apple Pay, and MADA for secure payment handling, and layered in scoped RBAC, background jobs, Laravel Excel exports, Firebase notifications, and AWS S3 storage — with ongoing database optimization to keep financial workflows fast and reliable at scale.',
+            'link' => null,
+            'screenshots' => [],
             'stack' => ['Laravel', 'MySQL', 'Redis', 'Laravel Nova', 'Payment Gateways'],
             'points' => [
                 'Built wallet and financial workflows: transfers, deposits, withdrawals, commissions, refunds, reconciliation.',
@@ -194,8 +210,13 @@ return [
             ],
         ],
         [
+            'slug' => 'goway',
             'name' => 'Goway',
             'subtitle' => 'Ride-Hailing Platform',
+            'summary' => 'Ride-hailing platform with real-time driver discovery and dynamic, surge-aware pricing.',
+            'description' => 'Goway is a ride-hailing platform covering the full trip lifecycle — matching, live tracking, pricing, cancellation, wallets, and payments — built on Laravel 10. I implemented real-time driver discovery using geohashing with Redis and Ably/Reverb, and a dynamic pricing engine that factors in distance, traffic, tolls, coupons, and surge conditions.',
+            'link' => null,
+            'screenshots' => [],
             'stack' => ['Laravel 10', 'Redis', 'Ably/Reverb', 'Google Routes', 'Payments'],
             'points' => [
                 'Developed REST APIs and full trip lifecycle: matching, live tracking, pricing, cancellation, wallets, payments.',
@@ -203,8 +224,13 @@ return [
             ],
         ],
         [
+            'slug' => 'rox-custody',
             'name' => 'ROX Custody Integration',
             'subtitle' => 'Secure Custody & Wallet Sync',
+            'summary' => 'Secure wallet-sync integration with ROX Custody via webhooks and background jobs.',
+            'description' => 'A secure REST API integration with ROX Custody, authenticated via API keys through reusable HTTP clients. Wallet state is kept in sync through inbound webhooks, with event logging, caching, optimized queries, and background jobs handling the asynchronous side of every transaction.',
+            'link' => null,
+            'screenshots' => [],
             'stack' => ['Laravel', 'REST APIs', 'Webhooks', 'Background Jobs'],
             'points' => [
                 'Built secure REST API integration using API-key authentication and reusable HTTP clients.',
@@ -212,16 +238,26 @@ return [
             ],
         ],
         [
+            'slug' => 'staron-erp',
             'name' => 'STARON Egypt ERP',
             'subtitle' => 'ERP & E-Commerce System',
+            'summary' => 'ERP and e-commerce system with real-time dashboards and mobile synchronization.',
+            'description' => 'An ERP and e-commerce system for STARON Egypt covering payments, logistics, and internal dashboards, with real-time synchronization to a companion mobile app. Built on Laravel, React, and MySQL with a REST API at its core.',
+            'link' => null,
+            'screenshots' => [],
             'stack' => ['Laravel', 'React', 'MySQL', 'REST APIs'],
             'points' => [
                 'Developed ERP and e-commerce functionality covering payments, logistics, dashboards, mobile sync.',
             ],
         ],
         [
+            'slug' => 'agrigroup-hr',
             'name' => 'Agrigroup HR & Payroll',
             'subtitle' => 'HR & Payroll System',
+            'summary' => 'HR and payroll system with QR-based employee lookup and automated payroll runs.',
+            'description' => 'An HR and payroll system for Agrigroup covering employee management, attendance, deductions and additions, vacation and warning logs, and automated monthly payroll generation. QR-based employee lookup speeds up daily check-ins, backed by secure APIs, structured logging, and robust error handling.',
+            'link' => null,
+            'screenshots' => [],
             'stack' => ['Laravel', 'MySQL', 'REST APIs'],
             'points' => [
                 'Built employee management, attendance, deductions/additions, vacation/warning logs, monthly payroll.',
